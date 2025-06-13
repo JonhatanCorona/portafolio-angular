@@ -1,0 +1,106 @@
+
+<div class="container py-5">
+  <div class="row">
+    <!-- Título sticky a la izquierda solo en md+ -->
+    <div class="col-md-5 mt-3 d-none d-md-block">
+      <div class="about-title text-start">
+        <h1 class="display-4 fw-bold text-primary">Sobre Mí</h1>
+      </div>
+    </div>
+
+    <!-- Contenido a la derecha -->
+    <div class="col-md-7">
+      <!-- Introducción -->
+      <section class="mb-5 p-4 rounded shadow-sm">
+        <p class="fs-5 text-secondary mb-1">
+          Soy desarrollador fullstack con foco en frontend (React, Next.js, Angular, TypeScript, Tailwind) y experiencia en backend con Node.js, PostgreSQL y MongoDB. Mi formación como profesor de matemáticas me dio una base sólida en lógica y resolución de problemas, que hoy aplico a la programación con pasión y compromiso.
+        </p>
+        <p class="fs-5 text-secondary mb-1">
+          Cuento con experiencia liderando equipos en atención al cliente, lo que me enseñó a trabajar con empatía, comunicarme efectivamente y mantener la calma bajo presión.
+        </p>
+        <p class="fs-5 text-secondary mb-0">
+          Actualmente sigo perfeccionando mis habilidades con proyectos reales y aprendizaje constante. Busco aportar valor a través de código limpio, soluciones escalables y una actitud siempre colaborativa.
+        </p>
+      </section>
+
+      <!-- Experiencia -->
+      <section class="mb-5">
+        <h2 class="mb-4 text-primary border-start border-4 border-primary ps-3 fw-bold">Experiencia Profesional</h2>
+
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h3 class="h5 fw-bold">Técnico en Soporte y Desarrollo Freelance</h3>
+            <p class="text-muted mb-1"><strong>Ferretería DsF (Venezuela)</strong> | Remoto</p>
+            <small class="text-muted d-block mb-3">Enero 2023 – Actualidad</small>
+            <p class="text-secondary">
+              Realizo mantenimiento y respaldo de bases de datos, solución de fallas del sistema de facturación y soporte técnico general. Servicios prestados de forma independiente, remunerado por evento.
+            </p>
+          </div>
+        </div>
+
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h3 class="h5 fw-bold">Supervisor del Servicio de Atención al Cliente</h3>
+            <p class="text-muted mb-1"><strong>ECC (Contact Center – Lima, Perú)</strong> | Remoto</p>
+            <small class="text-muted d-block mb-3">Diciembre 2023 – Diciembre 2024 (1 año)</small>
+            <p class="text-secondary">
+              Supervisé y coordiné un equipo de asesores telefónicos, asegurando el cumplimiento de indicadores clave de rendimiento (KPI) como TMO, FCR y CSAT. Implementé seguimiento individual y retroalimentación continua, mejorando la calidad del servicio y reduciendo los reclamos. Contribuí a mantener un índice de satisfacción del cliente superior al 90%.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificaciones -->
+      <section class="mb-5">
+        <h2 class="mb-4 text-primary border-start border-4 border-primary ps-3 fw-bold">Licencias y Certificaciones</h2>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-light">
+            <h5 class="fw-bold mb-1">Full Stack Developer – Desarrollo de aplicaciones web</h5>
+            <small class="text-muted">Henry (Programa intensivo) | Enero 2025 – Junio 2025</small>
+          </li>
+          <li class="list-group-item bg-light">
+            <h5 class="fw-bold mb-1">React.js</h5>
+            <small class="text-muted">Platzi | Expedición: Marzo 2025</small><br>
+            <small class="text-muted">ID de la credencial: fea78b63-1636-4655-af6a-56cd72d4eee7</small>
+          </li>
+          <li class="list-group-item bg-light">
+            <h5 class="fw-bold mb-1">React.js E-commerce Profesional</h5>
+            <small class="text-muted">Platzi | Expedición: Marzo 2025</small><br>
+            <small class="text-muted">ID de la credencial: 984cfc1b-56b7-4626-b392-9ad525bcd90c</small>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Formación Académica -->
+      <section>
+        <h2 class="mb-4 text-primary border-start border-4 border-primary ps-3 fw-bold">Formación Académica</h2>
+
+        <div class="bg-light p-3 rounded shadow-sm">
+          <h5 class="fw-bold mb-1">Licenciatura en Educación con mención en Matemáticas y Física</h5>
+          <p class="mb-0 text-secondary">Universidad Nacional Experimental "Rafael María Baralt" (UNERMB)</p>
+          <small class="text-muted">Marzo 2010 – Diciembre 2016</small>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  window.addEventListener('scroll', () => {
+    const aboutTitle = document.querySelector('.about-title');
+    const container = document.querySelector('.container');
+    const windowHeight = window.innerHeight;
+    const containerRect = container.getBoundingClientRect();
+
+    if (containerRect.bottom < windowHeight / 2) {
+      aboutTitle.style.top = `${windowHeight - (windowHeight - containerRect.bottom) - 20}px`;
+      aboutTitle.style.transform = 'translateY(0)';
+    } else {
+      aboutTitle.style.top = '50vh';
+      aboutTitle.style.transform = 'translateY(-50%)';
+    }
+  });
+</script>

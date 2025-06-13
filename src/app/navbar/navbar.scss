@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #1e40af;  // azul oscuro
+  color: white;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  button {
+    color: white;
+    font-weight: 500;
+    margin-left: 8px;
+
+    &.active-link {
+      border-bottom: 2px solid white;
+    }
+  }
+}
+
