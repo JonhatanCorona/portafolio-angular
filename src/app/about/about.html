@@ -2,16 +2,19 @@
 <div class="container py-5">
   <div class="row">
     <!-- Título sticky a la izquierda solo en md+ -->
-    <div class="col-md-5 mt-3 d-none d-md-block">
-      <div class="about-title text-start">
-        <h1 class="display-4 fw-bold text-primary">Sobre Mí</h1>
-      </div>
-    </div>
+    <div
+  #aboutTitle
+  class="col-md-5 mt-3 d-none d-md-block"
+  [@fadeIn]="animationState">
+  <div class="about-title text-start" style="margin-top: 140px;">
+    <h1 class="display-4 fw-bold text-primary">Sobre Mí</h1>
+  </div>
+</div>
 
     <!-- Contenido a la derecha -->
     <div class="col-md-7">
       <!-- Introducción -->
-      <section class="mb-5 p-4 rounded shadow-sm">
+      <section class="mb-5 rounded shadow-sm">
         <p class="fs-5 text-secondary mb-1">
           Soy desarrollador fullstack con foco en frontend (React, Next.js, Angular, TypeScript, Tailwind) y experiencia en backend con Node.js, PostgreSQL y MongoDB. Mi formación como profesor de matemáticas me dio una base sólida en lógica y resolución de problemas, que hoy aplico a la programación con pasión y compromiso.
         </p>
@@ -69,6 +72,12 @@
             <small class="text-muted">Platzi | Expedición: Marzo 2025</small><br>
             <small class="text-muted">ID de la credencial: 984cfc1b-56b7-4626-b392-9ad525bcd90c</small>
           </li>
+          <li class="list-group-item bg-light">
+            <h5 class="fw-bold mb-1">Angular JS desde cero con Bluuweb</h5>
+            <small class="text-muted">Cursa | Expedición: Junio 2025</small><br>
+            <small class="text-muted">ID de la credencial: u6482225</small>
+          </li>
+
         </ul>
       </section>
 
@@ -100,7 +109,7 @@
       aboutTitle.style.transform = 'translateY(0)';
     } else {
       aboutTitle.style.top = '50vh';
-      aboutTitle.style.transform = 'translateY(-50%)';
+      aboutTitle.style.transform = 'translateY(-40%)';
     }
   });
 </script>

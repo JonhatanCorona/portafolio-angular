@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+
 import { MatIconModule } from '@angular/material/icon';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './home.scss'
 })
 export class Home {
-
+ @Output() scroll = new EventEmitter<void>();
+ 
 }

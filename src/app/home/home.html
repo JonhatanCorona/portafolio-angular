@@ -5,9 +5,9 @@
 
 
     <!-- Botón izquierda -->
-    <button mat-raised-button color="primary" class="me-3" style="margin-bottom: 400px;">
-      Sobre Mí
-    </button>
+    <button mat-raised-button color="primary" class="me-3" style="margin-bottom: 400px;" (click)="scroll.emit()">
+  Sobre Mí
+</button>
 
     <!-- Título centrado -->
 <h1 class="fw-bold text-center mb-0">
@@ -29,8 +29,18 @@
 
   <!-- Iconos de contacto centrados abajo -->
   <div class="d-flex justify-content-center gap-4 mb-4">
-    <mat-icon style="font-size: 24px;">code</mat-icon>
-    <mat-icon style="font-size: 24px;">email</mat-icon>
-    <mat-icon style="font-size: 24px;">face</mat-icon>
-  </div>
+
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=coronajonhatan.com" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-google fs-1" style="cursor:pointer;"></i>
+</a>
+
+  <a href="https://github.com/JonhatanCorona" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-github fs-1" style="cursor:pointer;"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/jonhatan-corona/" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-linkedin fs-1" style="cursor:pointer;"></i>
+</a>
+
 </div>
+

@@ -1,3 +1,7 @@
-<app-home></app-home>
-<app-about></app-about>
-  <app-footer class="bg-light text-center"></app-footer>
+<app-home (scroll)="scrollToAbout()"></app-home>
+
+<div id="about" >
+  <app-about></app-about>
+</div>
+<app-tech-skills></app-tech-skills>
+<app-footer class="bg-light text-center"></app-footer>
