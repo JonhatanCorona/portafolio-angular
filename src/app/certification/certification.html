@@ -1,0 +1,38 @@
+<div class="container py-5">
+  <div class="row">
+    <!-- Título sticky a la izquierda solo en md+ -->
+    
+    <!-- Contenido de certificaciones a la derecha -->
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 mb-4" *ngFor="let cert of certifications">
+                <div class="card shadow-sm h-100 border-0">
+                    <img
+                    [src]="cert.image"
+                    [alt]="cert.title"
+                    class="card-img-top"
+                    style="height: 180px; object-fit: cover;"
+                    />
+                    <div class="card-body">
+                        <h5 class="fw-bold text-primary">{{ cert.title }}</h5>
+                        <p class="text-muted mb-1"><strong>Institución:</strong> {{ cert.issuer }}</p>
+                        <p class="text-muted"><strong>Fecha:</strong> {{ cert.date }}</p>
+                        <a
+                        [href]="cert.link"
+                        target="_blank"
+                        class="btn btn-outline-primary btn-sm"
+                        >
+                        Ver Certificado
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-5 mt-3 d-none d-md-block">
+  <div class="about-title text-start" style="margin-top: 140px;">
+    <h1 class="display-4 fw-bold text-primary">Certificaciones</h1>
+  </div>
+</div>
+</div>
+</div>

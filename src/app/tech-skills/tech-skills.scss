@@ -4,12 +4,14 @@
 }
 
 .skill-title {
-    position: sticky;
-    top: 50vh;
-    transform: translateY(-40%);
-    transition: top 0.3s ease, transform 0.3s ease;
-    z-index: 10;
-  }
+  position: sticky;
+  top: 50vh;  // punto inicial: 45% de alto de la ventana
+  transform: translateY(-40%); // centro suavemente hacia arriba
+  z-index: 10;
+  background: white;
+  transition: transform 0.3s ease-in-out;
+  padding: 1rem;
+}
 
 .title {
   font-size: 2rem;

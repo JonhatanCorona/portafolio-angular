@@ -1,0 +1,15 @@
+.card-img-top {
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.3s ease;
+}
+.card-img-top:hover {
+  transform: scale(1.03);
+}
+
+.about-title {
+  position: sticky;
+  top: 50vh;
+  transform: translateY(-40%);
+  transition: top 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}

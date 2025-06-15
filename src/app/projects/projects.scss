@@ -1,0 +1,36 @@
+.projects-title {
+  position: sticky;
+  top: 50vh;
+  transform: translateY(-40%);
+  transition: top 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  height: 150px; /* para mantener espacio y evitar saltos */
+  overflow: visible;
+  font-weight: 700;
+  color: #0d6efd; /* color primary bootstrap */
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeSlideIn 1s ease forwards;
+  margin: 0;
+}
+
+.project-subtitle {
+  font-size: 2rem;
+  position: relative;
+  top: 80px;
+  left: 20px;
+  opacity: 0;
+  animation: fadeSlideIn 1s ease 0.6s forwards;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

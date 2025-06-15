@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { trigger, style, transition, animate, state } from '@angular/animations';
+import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,43 +7,43 @@ import { CommonModule } from '@angular/common';
   templateUrl: './about.html',
   styleUrls: ['./about.scss'],
   imports: [CommonModule],
-   animations: [
-    trigger('fadeIn', [
-      state('hidden', style({ opacity: 0 })),
-      state('visible', style({ opacity: 1 })),
-      transition('hidden => visible', [
-        animate('0.5s 1s ease-in') // 1s duración con 2s delay
-      ])
-    ])
-  ]
+    animations: [
+  trigger('fadeIn', [
+    state('hidden', style({ opacity: 0, transform: 'translateY(20px)' })),
+    state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
+    transition('hidden => visible', animate('500ms ease-out'))
+  ])
+]
 })
-export class About implements OnInit, OnDestroy {
-  @ViewChild('aboutTitle') aboutTitle!: ElementRef;
+export class About implements AfterViewInit, OnDestroy {
+ @ViewChildren('aboutItem') aboutItems!: QueryList<ElementRef>;
+animationStates: string[] = [];
+observer!: IntersectionObserver;
 
-  animationState = 'hidden';
+ngAfterViewInit() {
+  this.animationStates = new Array(this.aboutItems.length).fill('hidden');
 
-  observer!: IntersectionObserver;
-
-  ngOnInit() {
-    this.observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.animationState = 'visible';
-          this.observer.disconnect();  // Sólo activar una vez
-        }
-      });
-    }, {
-      threshold: 0.1 // se activa cuando el 20% del elemento es visible
+  this.observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const index = this.aboutItems.toArray().findIndex(
+        el => el.nativeElement === entry.target
+      );
+      if (index !== -1 && entry.isIntersecting && this.animationStates[index] === 'hidden') {
+        // Pequeño delay antes de activar animación
+        setTimeout(() => {
+          this.animationStates[index] = 'visible';
+        }, 750); // medio segundo
+        this.observer.unobserve(entry.target); // solo animar una vez
+      }
     });
-  }
+  }, {
+    threshold: 0.1
+  });
 
-  ngAfterViewInit() {
-    if (this.aboutTitle) {
-      this.observer.observe(this.aboutTitle.nativeElement);
-    }
-  }
+  this.aboutItems.forEach(item => this.observer.observe(item.nativeElement));
+}
 
-  ngOnDestroy() {
-    this.observer.disconnect();
-  }
+ngOnDestroy() {
+  this.observer.disconnect();
+}
 }

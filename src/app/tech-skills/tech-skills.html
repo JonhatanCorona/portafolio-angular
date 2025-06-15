@@ -1,12 +1,7 @@
 <div class="container py-5">
   <div class="row">
     <!-- Título sticky a la izquierda solo en md+ -->
-    <div class="col-md-5 mt-3 d-none d-md-block">
-      <div class="skill-title text-start sticky-top text-start" style="margin-top: 140px;">
-        <h1 class="display-4 fw-bold text-primary">Tecnologías</h1>
-      </div>
-    </div>
-
+    
     <!-- Contenido de tecnologías -->
     <div class="col-md-7">
       <section class="mb-4" *ngFor="let category of categories">
@@ -15,36 +10,25 @@
         </h2>
         <div class="row">
           <div
-            class="col-3 col-sm-2 col-md-2 col-lg-1 mb-4 text-center"
-            *ngFor="let tech of category.skills"
+          class="col-3 col-sm-2 col-md-2 col-lg-1 mb-4 text-center"
+          *ngFor="let tech of category.skills"
           >
-            <i
-              [class]="tech.iconClass + ' text-primary'"
-              [attr.title]="tech.name"
-              style="font-size: 32px; cursor: pointer;"
-            ></i>
-          </div>
+          <i
+          [class]="tech.iconClass + ' text-primary'"
+          [attr.title]="tech.name"
+          style="font-size: 32px; cursor: pointer;"
+          ></i>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
+ <div class="col-md-5 mt-3 mb-5">
+  <div class="skill-title text-start sticky-top text-start" style="margin-top: 140px;">
+    <h1 class="display-4 fw-bold text-primary">Tecnologías</h1>
+  </div>
+</div>
+
   </div>
 </div>
 
 
-
-<script>
-  window.addEventListener('scroll', () => {
-    const aboutTitle = document.querySelector('.about-title');
-    const container = document.querySelector('.container');
-    const windowHeight = window.innerHeight;
-    const containerRect = container.getBoundingClientRect();
-
-    if (containerRect.bottom < windowHeight / 2) {
-      aboutTitle.style.top = `${windowHeight - (windowHeight - containerRect.bottom) - 20}px`;
-      aboutTitle.style.transform = 'translateY(0)';
-    } else {
-      aboutTitle.style.top = '50vh';
-      aboutTitle.style.transform = 'translateY(-40%)';
-    }
-  });
-</script>
