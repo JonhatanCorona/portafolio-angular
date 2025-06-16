@@ -1,8 +1,7 @@
 <div class="container vh-100 d-flex flex-column position-relative">
 
   <!-- Contenedor para título y botones juntos, centrado vertical y horizontal -->
-<div class="d-flex justify-content-center align-items-center position-relative gap-5" style="flex-grow: 1;">
-
+<div class="d-flex justify-content-center align-items-center flex-md-row flex-column gap-5" style="flex-grow: 1;">
 
    <div class="botones-arriba"> 
    <button
@@ -12,12 +11,14 @@
     (click)="navigateTo('about')">
   Sobre Mí
 </button>
-<button
+  <button
     mat-raised-button
-    class="tech-button flotante animate__animated animate__fadeIn animate__delay-1s"
-    (click)="navigateTo('certification')">
-  Certificaciones
-</button>
+    color="primary"
+    class="tech-button animate__animated animate__fadeIn animate__delay-1s flotante"
+    (click)="navigateTo('tech-skills')"
+  >
+    Tecnologías
+  </button>
    </div> <!-- Botón izquierda -->
     
 
@@ -48,31 +49,37 @@
   <!-- Botón 2 -->
   <button
     mat-raised-button
-    color="primary"
-    class="tech-button animate__animated animate__fadeIn animate__delay-1s flotante"
-    (click)="navigateTo('tech-skills')"
-  >
-    Tecnologías
-  </button>
+    class="tech-button flotante animate__animated animate__fadeIn animate__delay-1s"
+    (click)="navigateTo('certification')">
+  Certificaciones
+</button>
 </div>
 
     
   </div>
 
   <!-- Iconos de contacto centrados abajo -->
-  <div class="d-flex justify-content-center gap-4 mb-4 social-icons">
+  <div class="d-flex justify-content-center gap-4 mb-5 social-icons">
+  <div class="tooltip-container">
+   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=coronajonhatan@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo" class="tech-icon">
+      <i class="fab fa-google fs-1"></i>
+    </a>
+    <span class="custom-tooltip">Email</span>
+  </div>
 
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=coronajonhatan.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo" class="tech-icon">
-  <i class="fab fa-google fs-1" style="cursor:pointer;"></i>
-</a>
+  <div class="tooltip-container">
+    <a href="https://github.com/JonhatanCorona" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="tech-icon">
+      <i class="fab fa-github fs-1"></i>
+    </a>
+    <span class="custom-tooltip">GitHub</span>
+  </div>
 
-  <a href="https://github.com/JonhatanCorona" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="tech-icon">
-  <i class="fab fa-github fs-1" style="cursor:pointer;"></i>
-</a>
-
-  <a href="https://www.linkedin.com/in/jonhatan-corona/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tech-icon">
-  <i class="fab fa-linkedin fs-1" style="cursor:pointer;"></i>
-</a>
-
+  <div class="tooltip-container">
+    <a href="https://www.linkedin.com/in/jonhatan-corona/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tech-icon">
+      <i class="fab fa-linkedin fs-1"></i>
+    </a>
+    <span class="custom-tooltip">LinkedIn</span>
+  </div>
 </div>
+
 

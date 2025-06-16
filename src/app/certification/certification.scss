@@ -78,3 +78,32 @@
   box-shadow: 0 0 30px rgba(95, 195, 228, 0.6);
   text-decoration: none;
 }
+
+@media (max-width: 767.98px) {
+  .project-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+
+  }
+
+  .project-card img {
+    margin-bottom: 1rem;
+  }
+
+  .tech-button {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    text-align: center;
+  }
+
+  .titulo-tec {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .card-body {
+    padding: 0;
+  }
+}

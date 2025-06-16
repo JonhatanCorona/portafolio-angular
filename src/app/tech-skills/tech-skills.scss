@@ -43,29 +43,18 @@
 
 /* Estilo visual para los íconos */
 .icono-tech {
-    display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 60px;
   height: 60px;
-  color: #e0f7fa;
   border: 2px solid #80deea;
   border-radius: 8px;
-  background-color: transparent;
+  background-color: rgba(224, 247, 250, 0.856);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(128, 222, 234, 0.3);
-  text-decoration: none;
-  font-size: 2rem; /* tamaño del icono */
+  object-fit: contain;
   transition: all 0.3s ease;
 }
 
 .icono-tech:hover {
-  transform: scale(1.1); /* agranda al 110% */
-  color: #80deea;
-  text-shadow:
-    0 0 20px 80deea; 
-  cursor: pointer;
+  transform: scale(1.1);
+  border-color: #80deea;
+  box-shadow: 0 0 20px #80deea;
 }
-
-

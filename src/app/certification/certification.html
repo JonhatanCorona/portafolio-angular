@@ -1,36 +1,54 @@
 <div class="container py-5">
   <div class="row">
     <!-- Título sticky a la izquierda solo en md+ -->
-    
-    <!-- Contenido de certificaciones a la derecha -->
-    <div class="col-md-7">
-        <div class="row">
-            <div class="col-9 mb-3 d-flex align-items-center project-card " *ngFor="let cert of certifications">
-  <div class="me-3">
-    <img [src]="cert.logo" alt="Logo {{cert.title}}" style="width: 100px; height: 100px; object-fit: contain;" />
-  </div>
-    <div class="card-body text-center">
-      <h5 class="card-title titulo-animado mb-3">{{ cert.title }}</h5>
-      <p class="text-muted-dark mb-1"><strong>Institución:</strong> {{ cert.issuer }}</p>
-      <p class="text-muted-dark"><strong>Fecha:</strong> {{ cert.date }}</p>
-      <a
-        [href]="cert.link"
-        target="_blank"
-        class="tech-button mt-3"
-      >
-        Ver Certificación
-      </a>
-                </div>
-            
-        </div>
+        <div class="col-12 d-block d-md-none text-center mb-4">
+      <h1 class="display-6 fw-bold titulo-tec animate__animated animate__fadeInUp">
+        Certificaciones
+      </h1>
     </div>
-</div>
-<div class="col-md-5 mt-3 d-none d-md-block">
-  <div class="about-title text-start" style="margin-top: 160px;">
-     <h1 class="display-4 fw-bold titulo-tec animate__animated animate__fadeInRight">
-      Certificaciones
-    </h1>
+    <!-- Contenido de certificaciones a la derecha -->
+   <div class="col-md-7">
+      <div class="row">
+        <div
+          class="col-12 col-lg-9 mb-3 d-flex flex-column flex-md-row align-items-center project-card"
+          *ngFor="let cert of certifications"
+        >
+          <div class="mb-3 mb-md-0 me-md-3 text-center">
+            <img
+              [src]="cert.logo"
+              alt="Logo {{ cert.title }}"
+              style="width: 100px; height: 100px; object-fit: contain;"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title titulo-animado mb-3">
+              {{ cert.title }}
+            </h5>
+            <p class="text-muted-dark mb-1">
+              <strong>Institución:</strong> {{ cert.issuer }}
+            </p>
+            <p class="text-muted-dark">
+              <strong>Fecha:</strong> {{ cert.date }}
+            </p>
+            <a
+              [href]="cert.link"
+              target="_blank"
+              class="tech-button mt-3 d-inline-block"
+            >
+              Ver Certificación
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TÍTULO STICKY SOLO EN MD+ -->
+    <div class="col-md-5 mt-3 d-none d-md-block">
+      <div class="about-title text-start" style="margin-top: 160px;">
+        <h1 class="display-4 fw-bold titulo-tec animate__animated animate__fadeInRight">
+          Certificaciones
+        </h1>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>

@@ -1,59 +1,56 @@
-# ProjectAngular
+# 💼 Portafolio Web - Jonhatan Corona
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
+Este es mi portafolio personal desarrollado para presentar mis **proyectos**, **habilidades técnicas**, **certificaciones** y medios de contacto profesional.
 
-## Development server
+Diseñado con enfoque en la experiencia del usuario (UX), diseño visual moderno y un estilo tecnológico animado.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🌐 Demo
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+🔗 [Ver portafolio en línea](https://portafolio-angular-chi.vercel.app)  
+*(Reemplaza el enlace con el real si lo tienes desplegado)*
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Tecnologías Utilizadas
 
-```bash
-ng generate component component-name
-```
+### Frontend
+- **Angular** – Framework principal para la estructura SPA
+- **TypeScript** – Tipado fuerte y escalabilidad
+- **HTML5 & SCSS** – Maquetación semántica y estilos personalizados
+- **Bootstrap 5** – Sistema de grillas y componentes responsive
+- **Animaciones CSS** – Transiciones suaves y efectos visuales
+- **Font Awesome / SVGs personalizados** – Iconografía mixta optimizada
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Estilo y Diseño
+- Temática **oscura profesional** con acentos azul eléctrico
+- Tipografía legible y moderna
+- Efectos `hover`, tooltips personalizados y títulos sticky animados
+- Layout adaptable a todos los tamaños de pantalla (100% responsive)
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## ✨ Características destacadas
 
-To build the project run:
+- 🎨 Secciones divididas por categorías (Frontend, Backend, DB, etc.)
+- 🧠 Integración de certificaciones con logos y enlaces verificables
+- 🔍 Iconos animados con descripciones al pasar el cursor
+- 📧 Accesos directos a redes sociales y contacto por email
+- 📱 Diseño mobile-first y compatibilidad cross-browser
+- 📦 Código modular y mantenible en Angular
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Este portafolio fue desarrollado como un proyecto personal con fines profesionales.
+- Representa tanto mis habilidades técnicas como mi identidad visual como desarrollador frontend.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📬 Contacto
 
-```bash
-ng test
-```
+- **Correo:** coronajonhatan@gmail.com
+- **GitHub:** [JonhatanCorona](https://github.com/JonhatanCorona)
+- **LinkedIn:** [linkedin.com/in/jonhatan-corona](https://www.linkedin.com/in/jonhatan-corona/)
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

@@ -1,7 +1,11 @@
 <div class="container py-5">
   <div class="row">
     <!-- Título sticky a la izquierda solo en md+ -->
-    
+    <div class="col-12 d-block d-md-none text-center mt-4 mb-4">
+  <h1 class="display-5 fw-bold titulo-tec animate__animated animate__fadeInUp">
+    Tecnologías
+  </h1>
+</div>
     <!-- Contenido de tecnologías -->
     <div class="col-md-7 text-center">
       <section class="mb-2 mt-2" *ngFor="let category of categories">
@@ -11,13 +15,15 @@
         <div class="row">
           <div class="row contenedor-iconos">
   <div
-    class="col-3 col-sm-2 col-md-2 col-lg-1 mb-1 text-center"
-    *ngFor="let tech of category.skills"
-  >
-    <i
-      [class]="tech.iconClass + ' icono-tech fs-1' "
-      [attr.title]="tech.name"
-    ></i>
+  class="col-3 col-sm-2 col-md-2 col-lg-1 mb-1 text-center icon-wrapper"
+  *ngFor="let tech of category?.skills"
+>
+ <img
+    [src]="tech.iconFile"
+  class="icono-tech"
+  alt="{{ tech.name }}"
+  title="{{ tech.name }}"
+  />
   </div>
 </div>
 

@@ -1,5 +1,10 @@
 <div class="container py-5">
   <div class="row">
+    <div class="d-block d-md-none text-center mt-4">
+  <h1 class="fw-bold titulo-tec animate__animated animate__fadeInDown">
+    Sobre Mí
+  </h1>
+</div>
     <!-- Título sticky a la izquierda solo en md+ -->
    <div class="col-md-5 mt-3 d-none d-md-block">
   <div class="about-title text-start" style="margin-top: 160px;">
@@ -12,8 +17,8 @@
     <!-- Contenido a la derecha -->
     <div class="col-md-7 " #aboutItem [@fadeIn]="animationStates[0]">
       <!-- Introducción -->
-     <section class="about-box mt-5 mb-5 p-4">
-  <p class="mb-3">
+     <section class="about-box mt-md-5 mb-md-5 mt-5 mb-5 p-4">
+  <p class="mt-0 mb-3">
     Soy desarrollador fullstack con foco en frontend (React, Next.js, Angular, TypeScript, Tailwind) y experiencia en backend con Node.js, PostgreSQL y MongoDB. Mi formación como profesor de matemáticas me dio una base sólida en lógica y resolución de problemas, que hoy aplico a la programación con pasión y compromiso.
   </p>
   <p class="mb-3">
@@ -27,7 +32,7 @@
 
       <!-- Experiencia -->
       <section class="mb-5">
-        <h2 class="mb-3 mt-3 titulo-animado ps-3 ">Experiencia Profesional</h2>
+        <h2 class="mb-3 mt-3 titulo-animado ps-3 text-center text-md-start ">Experiencia Profesional</h2>
 
         <div class="card-body tech-card text-light">
   <h3 class="titulo-animado-sec">Técnico en Soporte y Desarrollo Freelance</h3>
@@ -80,7 +85,7 @@
         <div class="card-body tech-card text-light">
           <h5 class=" mb-1 titulo-animado-sec">Licenciatura en Educación con mención en Matemáticas y Física</h5>
           <p class="mb-0 text-muted-dark">Universidad Nacional Experimental "Rafael María Baralt" (UNERMB)</p>
-          <small class="text-muted-.dark">Marzo 2010 – Diciembre 2016</small>
+          <small class="text-muted-dark">Marzo 2010 – Diciembre 2016</small>
         </div>
       </section>
     </div>

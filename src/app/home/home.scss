@@ -139,3 +139,131 @@
     0 0 20px #80deea;
   cursor: pointer;
 }
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-tooltip {
+  position: absolute;
+  bottom: -30px; /* aparece debajo del icono */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: #80deea;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 8px rgba(128, 222, 234, 0.4);
+}
+
+.tooltip-container:hover .custom-tooltip {
+  opacity: 1;
+}
+
+
+/* ESTILOS RESPONSIVOS */
+
+/* Para pantallas menores a 768px (tablets y celulares) */
+@media (max-width: 767.98px) {
+  .titulo-principal {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0 1rem;
+  }
+
+  .nombre-animado span {
+    font-size: 2.2rem;
+  }
+
+  .rol {
+    font-size: 1.3rem;
+  }
+
+  .botones-arriba,
+  .botones-abajo {
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 1rem;
+  }
+
+  .botones-abajo {
+    margin-top: 2rem;
+  }
+
+  .botones-arriba {
+    margin-bottom: 2rem;
+  }
+
+  .tech-button {
+    display: inline-flex;         
+    justify-content: center;    
+    align-items: center;    
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    width: 90%;
+    text-align: center;
+  }
+
+  .tech-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .container.vh-100 {
+    height: auto !important;
+    padding: 2rem 0;
+  }
+
+  .d-flex.gap-5 {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+}
+
+/* Para pantallas medianas (768px a 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .titulo-principal {
+    font-size: 1.8rem;
+  }
+
+  .nombre-animado span {
+    font-size: 3rem;
+  }
+
+  .rol {
+    font-size: 1.6rem;
+  }
+
+  .tech-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .botones-arriba,
+  .botones-abajo {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .tech-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+  }
+}
