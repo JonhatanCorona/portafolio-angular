@@ -4,50 +4,73 @@
 <div class="d-flex justify-content-center align-items-center position-relative gap-5" style="flex-grow: 1;">
 
 
-   <div> 
-    <button mat-raised-button color="primary" class="me-3" style="margin-bottom: 400px;" (click)="navigateTo('about')">
+   <div class="botones-arriba"> 
+   <button
+    mat-raised-button
+    color="primary"
+    class="tech-button animate__animated animate__fadeIn animate__delay-1s flotante"
+    (click)="navigateTo('about')">
   Sobre Mí
 </button>
-<button mat-raised-button color="primary" class="me-3" style="margin-bottom: 400px;"(click)="navigateTo('certification')">
+<button
+    mat-raised-button
+    class="tech-button flotante animate__animated animate__fadeIn animate__delay-1s"
+    (click)="navigateTo('certification')">
   Certificaciones
 </button>
    </div> <!-- Botón izquierda -->
     
 
     <!-- Título centrado -->
-<h1 class="fw-bold text-center mb-0 text-light">
+<h1
+  class="titulo-principal animate__animated animate__fadeIn animate__delay-0.5s"
+>
   Hola, soy <br />
   <span class="nombre-animado">
     <span>J</span><span>o</span><span>n</span><span>h</span><span>a</span><span>t</span><span>a</span><span>n</span>
-    <span> </span> <span> </span>
-    <span> C</span><span>o</span><span>r</span><span>o</span><span>n</span><span>a</span>
-  </span>, <br />
-  Desarrollador Full Stack
+    <span>&nbsp;</span>
+    <span>C</span><span>o</span><span>r</span><span>o</span><span>n</span><span>a</span>
+  </span> <br />
+  <span class="rol">Desarrollador Full Stack</span>
 </h1>
-<div>  
-<button mat-raised-button color="primary" class="me-3" style="margin-top: 400px;"(click)="navigateTo('projects')">
-  Proyectos
-</button>
-    <!-- Botón derecha -->
-<button mat-raised-button color="primary" class="me-3" style="margin-top: 400px;"(click)="navigateTo('tech-skills')">
-  Tecnologias
-</button>
+
+<div class="botones-abajo">
+  <!-- Botón 1 -->
+  <button
+    mat-raised-button
+    color="primary"
+    class="tech-button animate__animated animate__fadeIn animate__delay-1s flotante"
+    (click)="navigateTo('projects')"
+  >
+    Proyectos
+  </button>
+
+  <!-- Botón 2 -->
+  <button
+    mat-raised-button
+    color="primary"
+    class="tech-button animate__animated animate__fadeIn animate__delay-1s flotante"
+    (click)="navigateTo('tech-skills')"
+  >
+    Tecnologías
+  </button>
 </div>
+
     
   </div>
 
   <!-- Iconos de contacto centrados abajo -->
-  <div class="d-flex justify-content-center gap-4 mb-4">
+  <div class="d-flex justify-content-center gap-4 mb-4 social-icons">
 
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=coronajonhatan.com" target="_blank" rel="noopener noreferrer">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=coronajonhatan.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo" class="tech-icon">
   <i class="fab fa-google fs-1" style="cursor:pointer;"></i>
 </a>
 
-  <a href="https://github.com/JonhatanCorona" target="_blank" rel="noopener noreferrer">
+  <a href="https://github.com/JonhatanCorona" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="tech-icon">
   <i class="fab fa-github fs-1" style="cursor:pointer;"></i>
 </a>
 
-<a href="https://www.linkedin.com/in/jonhatan-corona/" target="_blank" rel="noopener noreferrer">
+  <a href="https://www.linkedin.com/in/jonhatan-corona/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tech-icon">
   <i class="fab fa-linkedin fs-1" style="cursor:pointer;"></i>
 </a>
 

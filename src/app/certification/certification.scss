@@ -1,15 +1,80 @@
-.card-img-top {
-  border-bottom: 1px solid #ddd;
-  transition: transform 0.3s ease;
-}
-.card-img-top:hover {
-  transform: scale(1.03);
+.about-title {
+    position: sticky;
+    top: 50vh;
+    transform: translateY(-40%);
+    transition: top 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    height: 150px; /* Para que el contenedor tenga espacio */
+    overflow: visible;
+  }
+
+  .titulo-tec {
+  color: #80deea; /* azul brillante tipo tech */
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-shadow:
+    0 0 30px rgba(95, 195, 228, 0.8);
+  transition: color 0.3s ease;
 }
 
-.about-title {
-  position: sticky;
-  top: 50vh;
-  transform: translateY(-40%);
-  transition: top 0.3s ease, transform 0.3s ease;
-  z-index: 10;
+.titulo-tec:hover {
+  color: #e0f7fa;
+  text-shadow:
+    0 0 20px #80deea;
+
+  cursor: pointer;
+}
+
+
+.titulo-animado {
+  color: #80deea;  
+  font-size: 1.5rem; /* o ajusta según tu diseño */
+  font-weight: 400;
+  text-shadow: 0 0 15px #80deea;
+  display: inline-block;
+
+}
+
+.text-muted-dark {
+  color: rgba(255, 255, 255, 0.904); /* gris claro translúcido */
+}
+
+.tech-button {
+  background-color: transparent !important;
+  text-decoration: none;
+  color: #e0f7fa; /* azul brillante tipo tech */
+  border: 2px solid #5fc3e4;
+  padding: 8px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(95, 195, 228, 0.3);
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px); /* estilo futurista */
+}
+
+.tech-button:hover {
+  background-color: rgba(95, 195, 228, 0.1);
+  box-shadow: 0 0 25px rgba(197, 224, 233, 0.6);
+  border-color: #ffffff;
+  color: #80deea;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid #5fc3e4;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(95, 195, 228, 0.3);
+}
+
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(95, 195, 228, 0.6);
+  text-decoration: none;
 }

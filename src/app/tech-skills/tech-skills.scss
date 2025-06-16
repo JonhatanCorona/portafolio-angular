@@ -1,50 +1,71 @@
-.tech-skills {
-  padding: 2rem;
-  text-align: center;
+.about-title {
+    position: sticky;
+    top: 50vh;
+    transform: translateY(-40%);
+    transition: top 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    height: 150px; /* Para que el contenedor tenga espacio */
+    overflow: visible;
+  }
+
+.titulo-tec {
+  color: #80deea; /* azul brillante tipo tech */
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-shadow:
+    0 0 30px rgba(95, 195, 228, 0.8);
+  transition: color 0.3s ease;
 }
 
-.skill-title {
-  position: sticky;
-  top: 50vh;  // punto inicial: 45% de alto de la ventana
-  transform: translateY(-40%); // centro suavemente hacia arriba
-  z-index: 10;
-  background: white;
-  transition: transform 0.3s ease-in-out;
-  padding: 1rem;
+
+.titulo-tec:hover {
+  color: #e0f7fa;
+  text-shadow:
+    0 0 20px #80deea;
+
+  cursor: pointer;
 }
 
-.title {
+.titulo-animado {
   font-size: 2rem;
+  color: #80deea;
+  text-shadow: 0 0 15px #80deea;
+  font-weight: 800;
+  display: inline-block;
   margin-bottom: 1.5rem;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
+/* Contenedor opcional si deseas centrar o ajustar el espacio general */
+.contenedor-iconos {
+  justify-content: center;
+  gap: 1.1rem;
+}
+
+/* Estilo visual para los íconos */
+.icono-tech {
+    display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  color: #e0f7fa;
+  border: 2px solid #80deea;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(128, 222, 234, 0.3);
+  text-decoration: none;
+  font-size: 2rem; /* tamaño del icono */
+  transition: all 0.3s ease;
 }
 
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.icono-tech:hover {
+  transform: scale(1.1); /* agranda al 110% */
+  color: #80deea;
+  text-shadow:
+    0 0 20px 80deea; 
+  cursor: pointer;
 }
 
-.icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.5rem;
-}
 
-.about-title.sticky-top {
-  position: sticky;
-  top: 0;
-  height: 100vh;            /* Ocupa toda la altura de la pantalla */
-  display: flex;
-  align-items: center;      /* Centrado vertical */
-  background: white;        /* Fondo para evitar superposición */
-  z-index: 10;
-  padding-left: 1rem;       /* Opcional: para mantener separación del borde */
-}

@@ -3,28 +3,32 @@
     <!-- Título sticky a la izquierda solo en md+ -->
     
     <!-- Contenido de tecnologías -->
-    <div class="col-md-7">
-      <section class="mb-4" *ngFor="let category of categories">
-        <h2 class="mb-1 text-primary border-start border-4 border-primary ps-3 fw-bold">
+    <div class="col-md-7 text-center">
+      <section class="mb-2 mt-2" *ngFor="let category of categories">
+        <h2 class="mb-3 mt-3 text-center titulo-animado ps-3">
           {{ category.category }}
         </h2>
         <div class="row">
-          <div
-          class="col-3 col-sm-2 col-md-2 col-lg-1 mb-4 text-center"
-          *ngFor="let tech of category.skills"
-          >
-          <i
-          [class]="tech.iconClass + ' text-primary'"
-          [attr.title]="tech.name"
-          style="font-size: 32px; cursor: pointer;"
-          ></i>
-        </div>
+          <div class="row contenedor-iconos">
+  <div
+    class="col-3 col-sm-2 col-md-2 col-lg-1 mb-1 text-center"
+    *ngFor="let tech of category.skills"
+  >
+    <i
+      [class]="tech.iconClass + ' icono-tech fs-1' "
+      [attr.title]="tech.name"
+    ></i>
+  </div>
+</div>
+
       </div>
     </section>
   </div>
- <div class="col-md-5 mt-3 mb-5">
-  <div class="skill-title text-start sticky-top text-start" style="margin-top: 140px;">
-    <h1 class="display-4 fw-bold text-primary">Tecnologías</h1>
+ <div class="col-md-5 mt-3 d-none d-md-block">
+  <div class="about-title text-start" style="margin-top: 160px;">
+    <h1 class="display-4 fw-bold titulo-tec animate__animated animate__fadeInRight">
+      Tecnologías
+    </h1>
   </div>
 </div>
 

@@ -10,11 +10,7 @@ import { RouterModule } from '@angular/router';
 })
 export class Projects {
 projects = [
-  { id: 1, name: 'Proyecto Uno', imageUrl: 'techstore.png', url: '/proyecto-uno', category: 'Frontend' },
-  { id: 2, name: 'Proyecto Dos', imageUrl: 'sentia.png', url: '/proyecto-dos', category: 'Backend' },
-  { id: 3, name: 'Proyecto Tres', imageUrl: 'proyecto3.png', url: '/proyecto-tres', category: 'Full Stack' },
-  { id: 4, name: 'Proyecto Cuatro', imageUrl: 'techsore.png', url: '/proyecto-cuatro', category: 'Frontend' },
-  { id: 5, name: 'Proyecto Cinco', imageUrl: 'senta.png', url: '/proyecto-cinco', category: 'Backend' },
-  { id: 6, name: 'Proyecto Seis', imageUrl: 'proyecto3.png', url: '/proyecto-seis', category: 'Full Stack' },
+  { id: 1, name: 'TechStore (Rendimiento, escalabilidad y estilo en una tienda online)', imageUrl: 'techstore.png', url: '/proyecto-uno', category: 'Frontend', deploy:'https://tech-store-three-mu.vercel.app'  },
+  { id: 2, name: 'Sentia (Más que una app: tu guía emocional personalizada)', imageUrl: 'sentia.png', url: '/proyecto-dos', category: 'Backend', deploy:'https://front-pf-2025-1t99.vercel.app'  },
 ];
 }

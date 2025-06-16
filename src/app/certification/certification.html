@@ -5,33 +5,31 @@
     <!-- Contenido de certificaciones a la derecha -->
     <div class="col-md-7">
         <div class="row">
-            <div class="col-md-12 col-lg-6 mb-4" *ngFor="let cert of certifications">
-                <div class="card shadow-sm h-100 border-0">
-                    <img
-                    [src]="cert.image"
-                    [alt]="cert.title"
-                    class="card-img-top"
-                    style="height: 180px; object-fit: cover;"
-                    />
-                    <div class="card-body">
-                        <h5 class="fw-bold text-primary">{{ cert.title }}</h5>
-                        <p class="text-muted mb-1"><strong>Institución:</strong> {{ cert.issuer }}</p>
-                        <p class="text-muted"><strong>Fecha:</strong> {{ cert.date }}</p>
-                        <a
-                        [href]="cert.link"
-                        target="_blank"
-                        class="btn btn-outline-primary btn-sm"
-                        >
-                        Ver Certificado
-                    </a>
+            <div class="col-9 mb-3 d-flex align-items-center project-card " *ngFor="let cert of certifications">
+  <div class="me-3">
+    <img [src]="cert.logo" alt="Logo {{cert.title}}" style="width: 100px; height: 100px; object-fit: contain;" />
+  </div>
+    <div class="card-body text-center">
+      <h5 class="card-title titulo-animado mb-3">{{ cert.title }}</h5>
+      <p class="text-muted-dark mb-1"><strong>Institución:</strong> {{ cert.issuer }}</p>
+      <p class="text-muted-dark"><strong>Fecha:</strong> {{ cert.date }}</p>
+      <a
+        [href]="cert.link"
+        target="_blank"
+        class="tech-button mt-3"
+      >
+        Ver Certificación
+      </a>
                 </div>
-            </div>
+            
         </div>
     </div>
 </div>
 <div class="col-md-5 mt-3 d-none d-md-block">
-  <div class="about-title text-start" style="margin-top: 140px;">
-    <h1 class="display-4 fw-bold text-primary">Certificaciones</h1>
+  <div class="about-title text-start" style="margin-top: 160px;">
+     <h1 class="display-4 fw-bold titulo-tec animate__animated animate__fadeInRight">
+      Certificaciones
+    </h1>
   </div>
 </div>
 </div>

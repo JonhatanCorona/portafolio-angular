@@ -10,25 +10,25 @@ import { CommonModule } from '@angular/common';
 export class Certification {
 certifications = [
   {
-    title: 'Angular Developer Certification',
-    issuer: 'Google',
-    date: 'Jan 2024',
-    image: 'assets/certificates/angular-cert.png',
-    link: 'assets/certificates/angular-cert.png' // o un enlace externo
+    title: 'Desarrollador Full Stack',
+    issuer: 'Henry',
+    date: 'Junio 2025',
+    logo: 'henry.jpg',
+    link: 'henry.pdf' // o un enlace externo
   },
   {
-    title: 'Full Stack Web Development',
-    issuer: 'freeCodeCamp',
-    date: 'Dec 2023',
-    image: 'assets/certificates/fcc-fullstack.png',
-    link: 'assets/certificates/fcc-fullstack.png'
+    title: 'React',
+    issuer: 'Platzi',
+    date: 'Marzo 2025',
+    logo: 'platzi.jpg',
+    link: 'react.pdf'
   },
   {
-    title: 'Frontend with React',
-    issuer: 'Coursera',
-    date: 'Feb 2023',
-    image: 'assets/certificates/react-cert.png',
-    link: 'assets/certificates/react-cert.png'
+    title: 'Angular desde cero con Bluuweb',
+    issuer: 'Cursa',
+    date: 'Junio 2025',
+    logo: 'cursa.png',
+    link: 'cursa.pdf'
   }
 ];
 
