@@ -6,7 +6,9 @@ if (!existsSync(path)) {
 }
 
 const targetPath = `${path}/environment.ts`;
-
+console.log('FIREBASE_API_KEY:', process.env.FIREBASE_API_KEY);
+console.log('FIREBASE_PROJECT_ID:', process.env.FIREBASE_PROJECT_ID);
+console.log('FIREBASE_APP_ID:', process.env.FIREBASE_APP_ID);
 const envConfigFile = `
 export const environment = {
   production: true,
