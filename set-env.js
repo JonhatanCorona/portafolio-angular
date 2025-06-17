@@ -22,7 +22,7 @@ export const environment = {
   };
 };
 
-`;
+
 
 writeFileSync(targetPath, envConfigFile);
 console.log(`✅ Archivo environment.ts generado correctamente con exports separados.`);
