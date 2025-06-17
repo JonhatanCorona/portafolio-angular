@@ -12,7 +12,7 @@ export const environment = {
   production: true,
   loginEmail: '${process.env.LOGIN_EMAIL}',
   loginPassword: '${process.env.LOGIN_PASSWORD}'
-  firebaseConfig = {
+  firebaseConfig : {
     apiKey: '${process.env.FIREBASE_API_KEY}',
     authDomain: '${process.env.FIREBASE_AUTH_DOMAIN}',
     projectId: '${process.env.FIREBASE_PROJECT_ID}',
