@@ -1,0 +1,68 @@
+<div *ngIf="project; else notFound" class="bg-black text-white p-4 project-detail" style="min-height: 100vh;">
+  <div class="container py-4 fade-in-slide-up">
+    <!-- Título -->
+    <h1 class="mb-4 display-4 fw-bold text-center text-white title">{{ project.name }}</h1>
+
+    <!-- Imagen y descripción -->
+    <div class="row align-items-center mb-5 content-section">
+      <div class="col-lg-6 mb-4 mb-lg-0 image-container">
+        <img
+          [src]="project.image"
+          alt="{{ project.name }}"
+          class="img-fluid rounded shadow-lg project-image"
+        />
+      </div>
+      <div class="col-lg-6 d-flex flex-column justify-content-center text-container">
+        <p class="mb-2"><strong>Rol:</strong> {{ project.role }}</p>
+        <p class="mb-3"><strong>Fecha:</strong> {{ project.date }}</p>
+        <p class="lead description">{{ project.description }}</p>
+
+        <div *ngIf="project.githubUrl" class="mt-4 buttons">
+          <a
+            [href]="project.githubUrl"
+            target="_blank"
+            class="tech-button"
+            >Ver en GitHub</a
+          >
+          <a
+            *ngIf="project.liveDemoUrl"
+            [href]="project.liveDemoUrl"
+            target="_blank"
+            class="tech-button"
+            >Ver URL</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Características y Tecnologías -->
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <h3 class="mb-3 border-bottom border-secondary pb-2 section-title">Características</h3>
+        <ul class="list-group list-group-flush feature-list">
+          <li
+            *ngFor="let f of (project.features || [])"
+            class="list-group-item bg-transparent text-white ps-0 feature-item"
+          >
+            <i class="bi bi-check2-circle text-success me-2"></i>{{ f }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6 mb-4">
+        <h3 class="mb-3 border-bottom border-secondary pb-2 section-title">Tecnologías</h3>
+        <ul class="list-group list-group-flush tech-list">
+          <li
+            *ngFor="let t of (project.technologies || [])"
+            class="list-group-item bg-transparent text-white ps-0 tech-item"
+          >
+            <i class="bi bi-tools text-info me-2"></i>{{ t }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer><span class="footer">© 2025 Jonhatan Corona</span></footer>
+</div>
+<ng-template #notFound>
+  <p class="text-center text-white fs-4 py-5">Cargando.</p>
+</ng-template>

@@ -1,0 +1,27 @@
+.login-container {
+  background-color: #121212;
+  padding: 2rem;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  background-color: #1e1e1e;
+  border: 2px solid #80deea;
+  color: #fff;
+}
+
+input.form-control {
+  background-color: #2c2c2c;
+  border: 1px solid #5fc3e4;
+  color: white;
+}
+
+input.form-control::placeholder {
+  color: #aaaaaa;
+}
+
+input.form-control:focus {
+  border-color: #80deea;
+  box-shadow: 0 0 10px #80deea;
+}

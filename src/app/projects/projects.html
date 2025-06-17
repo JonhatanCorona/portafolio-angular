@@ -20,20 +20,20 @@
       <div class="row g-4">
         <div *ngFor="let project of projects" class="col-12">
           <div class="card shadow-sm project-card h-100">
-            <img [src]="project.imageUrl" class="card-img-top" alt="{{ project.name }}" />
+            <img [src]="project.image" class="card-img-top" alt="{{ project.name }}" />
             <div class="card-body text-center">
-              <h5 class="card-title titulo-animado mb-3">{{ project.name }}</h5>
+              <h5 class="card-title titulo-animado mb-3">{{ project.name }}</h5> <br/>
+              <h5 class="card-title titulo-animado mb-3">{{ project.date }}</h5>
               
               <!-- Botones -->
               <div class="d-flex justify-content-center gap-3 mt-3 flex-wrap">
-                <a *ngIf="project.url" [href]="project.url" target="_blank"class="tech-button mt-3">
+                <a [routerLink]="['/project-detail', project.id]" target="_blank"class="tech-button mt-3">
                   Ver Proyecto
                 </a>
-                <a *ngIf="project.deploy" [href]="project.deploy" target="_blank" class="tech-button mt-3">
+                <a [href]="project.liveDemoUrl" target="_blank" class="tech-button mt-3">
                   Ver Deploy
                 </a>
               </div>
-
             </div>
           </div>
         </div>

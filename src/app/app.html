@@ -1,17 +1,22 @@
-<app-home (scroll)="scrollTo($event)"></app-home>
+<div *ngIf="showContent">
+  <app-home (scroll)="scrollTo($event)"></app-home>
 
-<div id="about" >
-  <app-about></app-about>
-</div>
-<div #aboutItem [@fadeInSection]="animationStates[0]" id="tech-skills">
-  <app-tech-skills></app-tech-skills>
+  <div id="about" >
+    <app-about></app-about>
+  </div>
+  <div #aboutItem [@fadeInSection]="animationStates[0]" id="tech-skills">
+    <app-tech-skills></app-tech-skills>
+  </div>
+
+  <div #aboutItem [@fadeInSection]="animationStates[1]" id="projects">
+    <app-projects></app-projects>
+  </div>
+
+  <div #aboutItem [@fadeInSection]="animationStates[2]" id="certification">
+    <app-certification></app-certification>
+  </div>
+  <app-footer class="text-center"></app-footer>
 </div>
 
-<div #aboutItem [@fadeInSection]="animationStates[1]" id="projects">
-  <app-projects></app-projects>
-</div>
 
-<div #aboutItem [@fadeInSection]="animationStates[2]" id="certification">
-  <app-certification></app-certification>
-</div>
-<app-footer class="text-center"></app-footer>
+<router-outlet></router-outlet>

@@ -9,7 +9,7 @@ Diseñado con enfoque en la experiencia del usuario (UX), diseño visual moderno
 ## 🌐 Demo
 
 🔗 [Ver portafolio en línea](https://portafolio-angular-chi.vercel.app)  
-*(Reemplaza el enlace con el real si lo tienes desplegado)*
+
 
 ---
 

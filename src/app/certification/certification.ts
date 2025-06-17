@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../fire';
 
 @Component({
   selector: 'app-certification',
@@ -8,28 +9,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './certification.scss'
 })
 export class Certification {
-certifications = [
-  {
-    title: 'Desarrollador Full Stack',
-    issuer: 'Henry',
-    date: 'Junio 2025',
-    logo: 'henry.jpg',
-    link: 'henry.pdf' // o un enlace externo
-  },
-  {
-    title: 'React',
-    issuer: 'Platzi',
-    date: 'Marzo 2025',
-    logo: 'platzi.jpg',
-    link: 'react.pdf'
-  },
-  {
-    title: 'Angular desde cero con Bluuweb',
-    issuer: 'Cursa',
-    date: 'Junio 2025',
-    logo: 'cursa.png',
-    link: 'cursa.pdf'
-  }
-];
 
+certifications: any[] = []
+ constructor(private dataService: DataService) {}
+ 
+ ngOnInit() {
+   this.dataService.getItems('certification').subscribe(data => {
+     console.log('Datos recibidos:', data);
+     this.certifications = data;
+   });
+  }
 }

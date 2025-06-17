@@ -1,8 +1,9 @@
-import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChildren, QueryList, ElementRef, AfterViewInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { ChangeDetectorRef } from '@angular/core';
+import { Router, NavigationEnd, RouterModule } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { CommonModule } from '@angular/common';
 import { Footer } from './footer/footer';
-import { RouterModule } from '@angular/router';
 import { Home } from './home/home';
 import { About } from './about/about';
 import { TechSkills } from './tech-skills/tech-skills';
@@ -12,10 +13,11 @@ import { Certification } from './certification/certification';
 
 @Component({
   selector: 'app-root',
-  imports: [Home, Footer, RouterModule, About, TechSkills, Projects, Certification],
+  imports: [CommonModule, RouterModule , Home, Footer, About, TechSkills, Projects, Certification],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
-    animations: [  // 👈 AQUÍ deben estar las animaciones
+  styleUrls: ['./app.scss'],
+  standalone: true,
+  animations: [
     trigger('fadeInSection', [
       state('hidden', style({ opacity: 0, transform: 'translateY(40px)' })),
       state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
@@ -23,44 +25,56 @@ import { Certification } from './certification/certification';
     ])
   ]
 })
+export class App implements AfterViewInit, OnDestroy {
+  @ViewChildren('aboutItem') aboutItems!: QueryList<ElementRef>;
+  animationStates: string[] = [];
+  showContent = false;
+  observer!: IntersectionObserver;
 
-export class App {
-   scrollTo(sectionId: string): void {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private router: Router
+  ) {
+    // Escuchar cambios de ruta para mostrar/ocultar contenido
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.showContent = event.urlAfterRedirects === '/';
+      this.cdr.detectChanges();  // actualizar vista
+    });
   }
-}
 
-@ViewChildren('aboutItem') aboutItems!: QueryList<ElementRef>;
-animationStates: string[] = [];
-constructor(private cdr: ChangeDetectorRef) {}
-observer!: IntersectionObserver;
-animationState = 'hidden'; 
-ngAfterViewInit() {
-  this.animationStates = new Array(this.aboutItems.length).fill('hidden');
-
-  this.observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const index = this.aboutItems.toArray().findIndex(
-      el => el.nativeElement === entry.target
-    );
-    if (index !== -1 && entry.isIntersecting && this.animationStates[index] === 'hidden') {
-      setTimeout(() => {
-        this.animationStates[index] = 'visible';
-        this.cdr.detectChanges();  // 👈 muy importante
-      }, 500); // medio segundo
-      this.observer.unobserve(entry.target); // solo animar una vez
+  scrollTo(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  });
-}, {
-  threshold: 0.1
-});
+  }
 
-  this.aboutItems.forEach(item => this.observer.observe(item.nativeElement));
-}
+  ngAfterViewInit() {
+    if (!this.aboutItems) return;
 
-ngOnDestroy() {
-  this.observer.disconnect();
-}
+    this.animationStates = new Array(this.aboutItems.length).fill('hidden');
+
+    this.observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const index = this.aboutItems.toArray().findIndex(el => el.nativeElement === entry.target);
+        if (index !== -1 && entry.isIntersecting && this.animationStates[index] === 'hidden') {
+          setTimeout(() => {
+            this.animationStates[index] = 'visible';
+            this.cdr.detectChanges();
+          }, 500);
+          this.observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    this.aboutItems.forEach(item => this.observer.observe(item.nativeElement));
+  }
+
+  ngOnDestroy() {
+    this.observer.disconnect();
+  }
 }
