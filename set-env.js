@@ -1,6 +1,12 @@
-const { writeFileSync } = require('fs');
+const { writeFileSync, mkdirSync, existsSync } = require('fs');
+const path = './src/environments';
 
-const targetPath = './src/environments/environment.ts';
+// Crear carpeta si no existe
+if (!existsSync(path)) {
+  mkdirSync(path, { recursive: true });
+}
+
+const targetPath = `${path}/environment.ts`;
 
 const envConfigFile = `export const environment = {
   production: true,
@@ -20,3 +26,4 @@ const envConfigFile = `export const environment = {
 writeFileSync(targetPath, envConfigFile);
 
 console.log(`Archivo environment.ts generado correctamente en ${targetPath}`);
+
