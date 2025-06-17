@@ -7,10 +7,9 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environment/environment';
-console.log('Firebase config:', environment.firebaseConfig);
-export const appConfig: ApplicationConfig = {
 
-  
+
+export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),

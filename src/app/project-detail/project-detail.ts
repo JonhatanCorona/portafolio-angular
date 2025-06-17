@@ -24,7 +24,6 @@ export class ProjectDetail {
         const matchedProject = data.find((p: any) => p.id === id);
         if (matchedProject) {
           this.project = matchedProject;
-          console.log('Proyecto encontrado:', this.project);
         } else {
           console.error('Proyecto no encontrado con ID:', id);
         }

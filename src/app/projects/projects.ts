@@ -15,7 +15,6 @@ projects: any[] = []
  
  ngOnInit() {
    this.dataService.getItems('projects').subscribe(data => {
-     console.log('Datos recibidos:', data);
      this.projects = data;
    });
   }

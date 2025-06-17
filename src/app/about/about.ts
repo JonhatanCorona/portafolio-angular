@@ -30,17 +30,14 @@ constructor(private dataService: DataService) {}
 
 ngOnInit() {
   this.dataService.getItems('about').subscribe(data => {
-    console.log('Datos recibidos:', data);
     this.items = data;
   });
 
   this.dataService.getItems('experience').subscribe(data => {
-    console.log('Datos experience:', data);
     this.itemsExperience = data;
   });
 
   this.dataService.getItems('certification').subscribe(data => {
-    console.log('Datos certification:', data);
     this.itemsCertification = data;
   });
 }

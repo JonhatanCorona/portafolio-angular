@@ -15,7 +15,6 @@ certifications: any[] = []
  
  ngOnInit() {
    this.dataService.getItems('certification').subscribe(data => {
-     console.log('Datos recibidos:', data);
      this.certifications = data;
    });
   }
