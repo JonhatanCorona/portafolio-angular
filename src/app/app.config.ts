@@ -7,6 +7,8 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environment/environment';
+import { provideAuth } from '@angular/fire/auth';
+import { getAuth } from 'firebase/auth';
 
 
 export const appConfig: ApplicationConfig = {
@@ -17,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
 
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    
+    provideAuth(() => getAuth()),
     provideAnalytics(() => getAnalytics()),
     provideFirestore(() => getFirestore()), 
 
