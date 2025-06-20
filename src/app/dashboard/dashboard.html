@@ -1,4 +1,4 @@
-<div class="container-fluid mt-4">
+<div class="container mt-4">
   <div class="row">
     <!-- Sidebar -->
     <nav
@@ -19,9 +19,6 @@
     <!-- Main content -->
     <main class="col-12 col-md-10 ps-md-5">
       <!-- Título dinámico -->
-      <h2 class="mb-4 text-center text-md-start">
-        {{ getSectionTitle() }}
-      </h2>
 
       <!-- Secciones -->
       <app-admin-home *ngIf="selectedSection === ''"></app-admin-home>
