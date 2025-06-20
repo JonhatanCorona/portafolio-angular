@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  loginEmail: "",
+  loginEmail: '',
   loginPassword: '',
   firebaseConfig: {
     apiKey: '',
