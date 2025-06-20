@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { DataService } from '../fire';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Certification } from '../models/interface';
 
 declare var bootstrap: any;
 
@@ -13,8 +14,8 @@ declare var bootstrap: any;
   styleUrls: ['./admin-certification.scss']
 })
 export class AdminCertification implements OnInit, AfterViewInit {
-  items: any[] = [];
-   allItems: any[] = [];      
+  items: Certification[] = [];
+  allItems: Certification[] = [];      
   searchTerm: string = ''
   showCreateForm = false;
   newItem = {

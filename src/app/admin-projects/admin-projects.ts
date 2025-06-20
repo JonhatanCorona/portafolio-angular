@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { AfterViewInit, Component, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { DataService } from "../fire";
+import { Projects } from "../models/interface";
 
 
 declare var bootstrap: any;
@@ -14,12 +15,12 @@ declare var bootstrap: any;
   styleUrls: ['./admin-projects.scss']
 })
 export class AdminProjects implements OnInit, AfterViewInit {
-  items: any[] = [];
-  allItems: any[] = [];
+  items: Projects[] = [];
+  allItems: Projects[] = [];
   searchTerm: string = '';
   modalElement: HTMLElement | null = null;
 
-  newItem: any = {
+  newItem = {
     name: '',
     role: '',
     description: '',

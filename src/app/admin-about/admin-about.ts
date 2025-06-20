@@ -33,7 +33,7 @@ getAboutItems() {
         { id: firstItem.id, key: 'lastName', label: 'Apellido', value: firstItem.lastName, newValue: firstItem.lastName, isEditing: false },
         { id: firstItem.id, key: 'email', label: 'Email', value: firstItem.email, newValue: firstItem.email, isEditing: false },
         { id: firstItem.id, key: 'github', label: 'GitHub', value: firstItem.github, newValue: firstItem.github, isEditing: false },
-        { id: firstItem.id, key: 'linkedin', label: 'LinkedIn', value: firstItem.linkedin, newValue: firstItem.linkedin, isEditing: false },
+        { id: firstItem.id, key: 'github', label: 'LinkedIn', value: firstItem.linkedin, newValue: firstItem.linkedin, isEditing: false },
         { id: firstItem.id, key: 'aboutMe', label: 'Presentacion', value: firstItem.aboutMe, newValue: firstItem.aboutMe, isEditing: false },
       ];
     }

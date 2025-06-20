@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { environment } from '../../environment/environment';
 import { DataService } from '../fire';
 
 @Component({

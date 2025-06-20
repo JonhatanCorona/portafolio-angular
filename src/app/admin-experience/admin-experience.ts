@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { DataService } from '../fire';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Experience } from '../models/interface';
 
 declare var bootstrap: any;
 @Component({
@@ -11,8 +12,8 @@ declare var bootstrap: any;
   styleUrl: './admin-experience.scss'
 })
 export class AdminExperience implements OnInit, AfterViewInit {
-  items: any[] = [];
-  allItems: any[] = [];      
+  items: Experience[] = [];
+  allItems: Experience[] = [];      
   showCreateForm = false;
   newItem = {
     cargo: '',
