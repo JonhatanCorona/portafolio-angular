@@ -29,28 +29,31 @@
                 "input": "public"
               }
             ],
-           "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "@angular/material/prebuilt-themes/azure-blue.css",
-  "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-  "node_modules/animate.css/animate.min.css",
-  "src/styles.scss"
-]
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/animate.css/animate.min.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
-  {
-    "type": "initial",
-    "maximumWarning": "2mb",
-    "maximumError": "4mb"
-  },
-  {
-    "type": "anyComponentStyle",
-    "maximumWarning": "10kb",
-    "maximumError": "15kb"
-  }
-],
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "15kb"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
@@ -91,13 +94,16 @@
                 "input": "public"
               }
             ],
-           "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "@angular/material/prebuilt-themes/azure-blue.css",
-  "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-  "node_modules/animate.css/animate.min.css",
-  "src/styles.scss"
-]
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/animate.css/animate.min.css",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           }
         }
       }

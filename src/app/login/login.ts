@@ -31,6 +31,7 @@ export class Login {
     const user = await this.auth.login(email, password);
     
      if (user) {
+       localStorage.setItem('email', email);  // Guarda el email en localStorage
       this.router.navigate(['/dashboard']);
     } else {
       alert('Usuario o contraseña incorrectos');

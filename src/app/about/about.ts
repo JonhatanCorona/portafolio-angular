@@ -3,6 +3,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { CommonModule } from '@angular/common';
 import { DataService } from '../fire';
 
+
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.html',
@@ -27,20 +29,20 @@ animationStates: string[] = [];
 observer!: IntersectionObserver;
 
 constructor(private dataService: DataService) {}
-
 ngOnInit() {
-  this.dataService.getItems('about').subscribe(data => {
-    this.items = data;
-  });
+    // Retrasa ligeramente la ejecución para permitir que Zone.js se asiente completamente
+    this.dataService.getItems('about').subscribe(data => { // Añade un pequeño delay
+      this.items = data;
+    });
 
-  this.dataService.getItems('experience').subscribe(data => {
-    this.itemsExperience = data;
-  });
+    this.dataService.getItems('experience').subscribe(data => { // Añade un pequeño delay
+      this.itemsExperience = data;
+    });
 
-  this.dataService.getItems('certification').subscribe(data => {
-    this.itemsCertification = data;
-  });
-}
+    this.dataService.getItems('certification').subscribe(data => { // Añade un pequeño delay
+      this.itemsCertification = data;
+    });
+  }
   ngAfterViewInit() {
     this.animationStates = new Array(this.aboutItems.length).fill('hidden');
 

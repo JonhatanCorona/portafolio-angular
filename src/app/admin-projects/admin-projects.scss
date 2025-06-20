@@ -1,0 +1,219 @@
+.titulo-animado {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #80deea;
+  animation: fadeSlideDown 1s ease forwards;
+  user-select: none;
+}
+
+/* Animación título */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tech-button{ 
+  border: 2px solid #80deea;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: #e0f7fa;
+  transition: all 0.3s ease;
+  font-weight: 600;}
+.tech-input {
+  border: 2px solid #80deea;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: #e0f7fa;
+  padding: 4px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+
+.tech-input:focus {
+  color: #003c45;
+  border-color: #80deea;
+  box-shadow: 0 0 10px #80deeaaa;
+  outline: none;
+}
+
+.tech-button:hover {
+  background-color: rgba(95, 195, 228, 0.1);
+  box-shadow: 0 0 25px rgba(197, 224, 233, 0.6);
+  border-color: #ffffff;
+  color: #80deea;
+}
+
+.list-group-item {
+  background: transparent;
+  border: 1.5px solid #80deea;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  color: #e0f7fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  animation: fadeInUp 0.5s ease forwards;
+  padding: 1rem;
+}
+
+.list-group-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px #80deea55;
+  background-color: rgba(128, 222, 234, 0.1);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list-group-item img {
+  width: 130px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  border: 2px solid #80deea;
+  transition: transform 0.3s ease;
+}
+
+.list-group-item img:hover {
+  transform: scale(1.1);
+}
+
+.flex-grow-1 h5 {
+  margin-bottom: 0.25rem;
+  color: #80deea;
+  font-weight: 700;
+  user-select: text;
+}
+
+.flex-grow-1 small,
+.text-light {
+  color: #a0cfd6;
+  user-select: text;
+}
+
+/* Botones y animaciones */
+.tech-button,
+.btn-sm {
+  transition: all 0.3s ease;
+  border-radius: 0.375rem;
+}
+
+.tech-button:hover,
+.btn-sm:hover {
+  transform: scale(1.1);
+  color: white;
+  box-shadow: 0 0 25px rgba(197, 224, 233, 0.6);
+  border-color: #ffffff;
+}
+
+/* Espacio entre botones alineados a la derecha */
+.d-flex.justify-content-end.gap-2.mt-2 {
+  gap: 1rem;
+}
+
+/* Contenido expandible */
+.expandable {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+.expandable.show {
+  max-height: 1000px; /* suficiente para contenido */
+  opacity: 1;
+}
+
+/* Modal estilos */
+.tech-modal {
+  background: #003c45dd;
+  color: #e0f7fa;
+  border-radius: 0.75rem;
+  border: 2px solid #80deea;
+  animation: scaleIn 0.4s ease forwards;
+}
+
+.modal-header {
+  border-bottom: 1px solid #80deea;
+  color: #80deea;
+  font-weight: 700;
+  user-select: none;
+}
+
+.tech-modal .tech-input {
+  border-color: #80deea;
+  color: #e0f7fa;
+  background: transparent;
+}
+
+.tech-modal .tech-input:focus {
+  background-color: #80deea22;
+  border-color: #80deea;
+  color: #003c45;
+  box-shadow: 0 0 10px #80deeaaa;
+}
+
+.tech-modal .btn-secondary.tech-button {
+  background: transparent;
+  color: #e0f7fa;
+  border: 2px solid #80deea;
+  font-weight: 600;
+}
+
+.tech-modal .btn-secondary.tech-button:hover {
+  background: #80deea;
+  color: #003c45;
+  box-shadow: 0 0 12px #80deeaaa;
+}
+
+.tech-modal .btn-primary.tech-button {
+  background: #80deea;
+  border-color: #80deea;
+  color: #003c45;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.tech-modal .btn-primary.tech-button:hover {
+  background: #e0f7fa;
+  color: #003c45;
+  box-shadow: 0 0 15px #80deea;
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.flotante {
+  animation: flotacion 3s ease-in-out infinite;
+}
+
+@keyframes flotacion {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}

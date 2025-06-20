@@ -3,6 +3,8 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from 'firebase/auth';
 import { environment } from '../environment/environment';
 import { BehaviorSubject } from 'rxjs';
+import { Subscription } from 'rxjs'; // Asegúrate de importar Subscription
+
 
 @Injectable({
   providedIn: 'root'
@@ -49,13 +51,20 @@ export class Auth {
   }
 
   // Método que espera a que el usuario esté definido o sea null después de la inicialización de Firebase
-  waitForUser(): Promise<User | null> {
-    return new Promise((resolve) => {
-      const subscription = this.currentUser$.subscribe(user => {
-        // Resolve en cuanto recibimos cualquier valor, incluso null (cuando no hay usuario)
+waitForUser(): Promise<User | null> {
+  return new Promise((resolve) => {
+    // 1. Declara la variable aquí, sin asignarle nada todavía.
+    let subscription: Subscription;
+
+    // 2. Ahora asígnala. La variable 'subscription' ya existe en este scope.
+    subscription = this.currentUser$.subscribe(user => {
+      // 3. Cuando este código se ejecute, 'subscription' ya habrá sido asignada.
+      //    Por lo tanto, podemos cancelarla de forma segura.
+      if (subscription) {
         subscription.unsubscribe();
-        resolve(user);
-      });
+      }
+      resolve(user);
     });
-  }
+  });
+}
 }

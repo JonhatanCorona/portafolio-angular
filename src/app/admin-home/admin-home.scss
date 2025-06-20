@@ -1,0 +1,126 @@
+.admin-home {
+  background: transparent;
+  color: #e0f7fa;
+  min-height: 80vh;
+  padding: 3rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  text-shadow: 0 0 6px rgba(224, 247, 250, 0.75);
+}
+
+.username {
+  color: #80deea;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.username.loaded {
+  opacity: 1;
+}
+
+/* Títulos y texto */
+
+.welcome-message h1 {
+  color: #e0f7fa;
+  letter-spacing: 1.5px;
+  text-shadow:
+    0 0 8px #80deea,
+    0 0 20px #80deea;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.lead {
+  color: #80deea;
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 0 5px #80deea80;
+  font-weight: 500;
+}
+
+.recommendations h4 {
+  color: #80deea;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-shadow:
+    0 0 10px #e0f7fa,
+    0 0 20px #80deea;
+  animation: glowPulse 3s ease-in-out infinite alternate;
+}
+
+.list-group-item {
+  color: #e0f7fa;
+  font-weight: 600;
+  font-size: 1rem;
+  background: transparent !important;
+  border: 2px solid #80deea;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1.2rem;
+  box-shadow:
+    0 0 8px #80deea33,
+    inset 0 0 5px #80deea55;
+  transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+  background: rgba(128, 222, 234, 0.15);
+  border-color: #e0f7fa;
+  box-shadow:
+    0 0 20px #e0f7fa88,
+    inset 0 0 12px #e0f7faaa;
+  cursor: pointer;
+}
+
+.list-group-item .checkmark {
+  color: #80deea;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-shadow: 0 0 6px #80deeaaa;
+}
+
+/* Animaciones */
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 8px #80deea,
+      0 0 20px #80deea;
+  }
+  50% {
+    text-shadow:
+      0 0 15px #e0f7fa,
+      0 0 30px #e0f7fa;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0.3s;
+}

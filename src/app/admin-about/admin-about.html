@@ -1,1 +1,57 @@
-<p>admin-about works!</p>
+
+  <div class="titulo-animado ps-3 text-center flotante">Información Personal</div>
+
+  <section class="about-card p-4 tech-modal shadow rounded animate-card mt-5 mb-3">
+    <div
+      *ngFor="let item of items"
+      class="item-row d-flex flex-column mb-4 gap-2 border-bottom pb-3"
+    >
+      <!-- Etiqueta y valor -->
+      <div class="d-flex justify-content-between align-items-start flex-column flex-md-row">
+        <div class="mb-2">
+          <strong class="text-light">{{ item.label }}:</strong>
+          <span *ngIf="!item.isEditing" class="ms-2">{{ item.value }}</span>
+        </div>
+
+        <!-- Botón editar -->
+        <div class="text-md-end">
+          <button
+            *ngIf="!item.isEditing"
+            class="tech-button btn-sm animate-button"
+            (click)="enableEditing(item)"
+          >
+            Editar
+          </button>
+        </div>
+      </div>
+
+      <!-- Input/textarea con animación debajo -->
+      <div *ngIf="item.isEditing" class="mt-2 animate-fade-expand">
+        <textarea
+          *ngIf="item.key === 'aboutMe'"
+          [(ngModel)]="item.newValue"
+          rows="4"
+          class="tech-input w-100 mb-2"
+          placeholder="Editar {{ item.label }}"
+        ></textarea>
+
+        <input
+          *ngIf="item.key !== 'aboutMe'"
+          [(ngModel)]="item.newValue"
+          type="text"
+          class="tech-input w-100 mb-2"
+          placeholder="Editar {{ item.label }}"
+        />
+
+        <div class="d-flex justify-content-end gap-2">
+          <button class="tech-button btn-sm btn-primary" (click)="saveValue(item)">
+            Guardar
+          </button>
+          <button class="tech-button btn-sm btn-secondary" (click)="cancelEdit(item)">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+

@@ -1,0 +1,27 @@
+<div class="admin-home container py-5">
+  <!-- Mensaje de bienvenida -->
+  <div class="welcome-message text-center mb-5 animate-fade-in">
+    <h1 class="display-5 fw-bold mb-4">
+      Bienvenido <span [class.loaded]="userName" class="username">{{ userName }}</span>, <br /> a tu panel de administración
+    </h1>
+    <p class="lead text-ligth">
+      Gestiona tu portafolio de forma profesional y mantén tu contenido siempre actualizado.
+    </p>
+  </div>
+
+  <!-- Recomendaciones -->
+  <div class="recommendations mt-5 d-flex justify-content-center align-items-center flex-column animate-slide-up">
+    <h4 class="mb-3 text-uppercase text-ligth">🛠 Recomendaciones</h4>
+    <ul class="list-group list-group-flush w-100" style="max-width: 500px;">
+      <li class="list-group-item bg-transparent border-0 d-flex align-items-center gap-3">
+        <span class="checkmark">✔</span> Revisa y actualiza tus certificaciones.
+      </li>
+      <li class="list-group-item bg-transparent border-0 d-flex align-items-center gap-3">
+        <span class="checkmark">✔</span> Agrega nuevos proyectos cada trimestre.
+      </li>
+      <li class="list-group-item bg-transparent border-0 d-flex align-items-center gap-3">
+        <span class="checkmark">✔</span> Asegúrate de que tu sección “Sobre mí” esté actualizada.
+      </li>
+    </ul>
+  </div>
+</div>

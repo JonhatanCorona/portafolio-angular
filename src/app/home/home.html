@@ -59,23 +59,23 @@
   </div>
 
   <!-- Iconos de contacto centrados abajo -->
-  <div class="d-flex justify-content-center gap-4 mb-5 social-icons">
-  <div class="tooltip-container">
-   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=coronajonhatan@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo" class="tech-icon">
+  <div *ngFor="let item of items" class="d-flex justify-content-center gap-4 mb-5 social-icons">
+  <div  class="tooltip-container">
+   <a [href]="'https://mail.google.com/mail/?view=cm&fs=1&to=' + item.email" target="_blank" rel="noopener noreferrer" aria-label="Enviar correo" class="tech-icon">
       <i class="fab fa-google fs-1"></i>
     </a>
     <span class="custom-tooltip">Email</span>
   </div>
 
   <div class="tooltip-container">
-    <a href="https://github.com/JonhatanCorona" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="tech-icon">
+    <a [href]="item.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="tech-icon">
       <i class="fab fa-github fs-1"></i>
     </a>
     <span class="custom-tooltip">GitHub</span>
   </div>
 
   <div class="tooltip-container">
-    <a href="https://www.linkedin.com/in/jonhatan-corona/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tech-icon">
+    <a [href]="item.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="tech-icon">
       <i class="fab fa-linkedin fs-1"></i>
     </a>
     <span class="custom-tooltip">LinkedIn</span>

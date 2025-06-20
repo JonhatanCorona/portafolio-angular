@@ -1,1 +1,84 @@
-<p>admin-certification works!</p>
+<div class="titulo-animado ps-3 text-center flotante">Mis Certificaciones</div>
+
+<div class="row align-items-center mt-5 mb-3">
+  <!-- Buscador -->
+  <div class="col-12 col-lg-6">
+    <div class="input-group w-100">
+  <input
+    type="text"
+    class="tech-button"
+    placeholder="Buscar certificado..."
+    [(ngModel)]="searchTerm"
+    (ngModelChange)="filterItems()"
+  />
+</div>
+  </div>
+
+  <div class="col-12 col-lg-6 mt-2 mt-lg-0 d-flex justify-content-lg-end ">
+    <button
+      class="tech-button"
+      data-bs-toggle="modal"
+      data-bs-target="#createCertModal"
+    >
+      Crear Certificado
+    </button>
+  </div>
+</div>
+
+
+<div >
+  <ul class="list-group">
+    <li *ngFor="let item of items" class="list-group-item d-flex align-items-center gap-3">
+      <img [src]="item.image" alt="{{ item.name }}" class="rounded" style="width: 60px; height: 60px; object-fit: cover;" />
+      <div class="flex-grow-1">
+        <h5 class="mb-1">{{ item.name }}</h5>
+        <small class="text-ligth">{{ item.instituto }} — {{ item.fecha }}</small><br/>
+        <a [href]="item.url" target="_blank">Ver certificado</a>
+      </div>
+       <button class="btn btn-sm" (click)="deleteItem(item.id)" title="Eliminar certificado">
+        <i class="fas fa-trash-alt" style="font-size: 1.5rem;"></i>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<div class="modal fade" id="createCertModal" tabindex="-1" aria-labelledby="createCertModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form (ngSubmit)="createItem()" #form="ngForm" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createCertModalLabel">Crear Nuevo Certificado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" name="name" [(ngModel)]="newItem.name" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Instituto</label>
+          <input type="text" name="instituto" [(ngModel)]="newItem.instituto" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Fecha</label>
+          <input type="date" name="fecha" [(ngModel)]="newItem.fecha" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Credencial</label>
+          <input type="text" name="credencial" [(ngModel)]="newItem.credencial" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">URL Imagen</label>
+          <input type="url" name="image" [(ngModel)]="newItem.image" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">URL Certificado</label>
+          <input type="url" name="url" [(ngModel)]="newItem.url" class="form-control" required />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </div>
+    </form>
+  </div>
+</div>

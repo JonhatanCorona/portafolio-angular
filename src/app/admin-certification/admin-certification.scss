@@ -1,0 +1,223 @@
+
+
+/* Título animado */
+.titulo-animado {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #80deea;
+  animation: fadeSlideDown 1s ease forwards;
+  user-select: none;
+}
+
+/* Animación título */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inputs y botones */
+.tech-button,
+.tech-input {
+  border: 2px solid #80deea;
+  padding: 4px;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: #e0f7fa;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.tech-button:hover,
+.tech-input:focus {
+  color: #e0f7fa; /* color oscuro para contraste */
+  border-color: #80deea;
+  box-shadow: 0 0 10px #80deeaaa;
+  outline: none;
+  border: 2px solid #e0f7fa;
+}
+
+/* Input search */
+.tech-input {
+  padding: 1.5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  letter-spacing: 0.03em;
+}
+
+/* Lista de certificaciones */
+.list-group-item {
+  background: transparent;
+  border: 1.5px solid #80deea;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  color: #e0f7fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.list-group-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px #80deea55;
+  background-color: rgba(128, 222, 234, 0.1);
+}
+
+/* Animación items */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Imagen certificación */
+.list-group-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  border: 2px solid #80deea;
+  transition: transform 0.3s ease;
+}
+
+.list-group-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Info de certificación */
+.flex-grow-1 h5 {
+  margin-bottom: 0.25rem;
+  color: #80deea;
+  font-weight: 700;
+  user-select: text;
+}
+
+.flex-grow-1 small {
+  color: #a0cfd6;
+  user-select: text;
+}
+
+/* Link certificado */
+a.cert-link {
+  color: #80deea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a.cert-link:hover {
+  color: #e0f7fa;
+  text-decoration: underline;
+}
+
+/* Botón eliminar */
+.btn-delete {
+  color: #e0f7fa;
+  background: transparent;
+  border: none;
+  transition: color 0.3s ease;
+}
+
+.btn-delete:hover {
+  color: #80deea;
+  cursor: pointer;
+}
+
+/* Modal styles */
+.tech-modal {
+  background: #003c45dd; /* fondo oscuro semitransparente */
+  color: #e0f7fa;
+  border-radius: 0.75rem;
+  border: 2px solid #80deea;
+  animation: scaleIn 0.4s ease forwards;
+}
+
+/* Modal header */
+.modal-header {
+  border-bottom: 1px solid #80deea;
+  color: #80deea;
+  font-weight: 700;
+  user-select: none;
+}
+
+/* Inputs dentro modal */
+.tech-modal .tech-input {
+  border-color: #80deea;
+  color: #e0f7fa;
+  background: transparent;
+}
+
+.tech-modal .tech-input:focus {
+  background-color: #80deea22;
+  border-color: #80deea;
+  color: #003c45;
+  box-shadow: 0 0 10px #80deeaaa;
+}
+
+/* Botones modal */
+.tech-modal .btn-secondary.tech-button {
+  background: transparent;
+  color: #e0f7fa;
+  border: 2px solid #80deea;
+  font-weight: 600;
+}
+
+.tech-modal .btn-secondary.tech-button:hover {
+  background: #80deea;
+  color: #003c45;
+  box-shadow: 0 0 12px #80deeaaa;
+}
+
+/* Botón crear */
+.tech-modal .btn-primary.tech-button {
+  background: #80deea;
+  border-color: #80deea;
+  color: #003c45;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.tech-modal .btn-primary.tech-button:hover {
+  background: #e0f7fa;
+  color: #003c45;
+  box-shadow: 0 0 15px #80deea;
+}
+
+/* Animación modal scale */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.flotante {
+  animation: flotacion 3s ease-in-out infinite;
+}
+
+@keyframes flotacion {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
